@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Digital Kafe</title>
+    <style>
+        /* Pengaturan Dasar dan Aksesibilitas */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Tombol Kategori */
+        .categories {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .cat-btn {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .cat-btn.active {
+            background-color: #e67e22;
+            color: white;
+        }
+
+        /* Daftar Menu */
+        .menu-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .menu-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .menu-price {
+            font-weight: bold;
+            color: #e67e22;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kafe Nusantara</h1>
+        <p>Silakan pilih menu favorit Anda</p>
+    </header>
+
+    <div class="container">
+        <!-- Tombol Kategori -->
+        <div class="categories">
+            <button class="cat-btn active">Semua</button>
+            <button class="cat-btn">Makanan</button>
+            <button class="cat-btn">Minuman</button>
+        </div>
+
+        <!-- Daftar Menu -->
+        <div class="menu-item">
+            <div class="menu-info">
+                <h3>Nasi Goreng Spesial</h3>
+                <p>Nasi goreng dengan telur, ayam suwir, dan kerupuk.</p>
+            </div>
+            <div class="menu-price">Rp 25.000</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-info">
+                <h3>Es Teh Manis</h3>
+                <p>Teh melati segar dengan es batu pilihan.</p>
+            </div>
+            <div class="menu-price">Rp 5.000</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-info">
+                <h3>Roti Bakar Cokelat Keju</h3>
+                <p>Roti panggang dengan selai cokelat dan keju parut melimpah.</p>
+            </div>
+            <div class="menu-price">Rp 15.000</div>
+        </div>
+    </div>
+
+</body>
+</html>
