@@ -1,28 +1,44 @@
-// Mengambil semua tombol kategori dan item menu
-const categoryButtons = document.querySelectorAll('.cat-btn');
-const menuItems = document.querySelectorAll('.menu-item');
+/* Penataan Tombol Jumlah Menu */
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
-// Menambahkan fungsi klik ke setiap tombol kategori
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Menghapus kelas 'active' dari semua tombol
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Menambahkan kelas 'active' ke tombol yang sedang diklik
-        button.classList.add('active');
+.menu-info {
+    flex-grow: 1;
+}
 
-        // Mendapatkan kategori yang dipilih dari atribut data-category
-        const selectedCategory = button.getAttribute('data-category');
+.menu-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
 
-        // Menyaring menu berdasarkan kategori
-        menuItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            
-            if (selectedCategory === 'semua' || itemCategory === selectedCategory) {
-                item.style.display = 'flex'; // Tampilkan item
-            } else {
-                item.style.display = 'none'; // Sembunyikan item
-            }
-        });
-    });
-});
+.qty-btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.qty-btn:hover {
+    background-color: #e67e22;
+}
+
+.menu-actions span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
