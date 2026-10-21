@@ -1,64 +1,38 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Digital Kafe Nusantara</title>
-    <!-- Menghubungkan file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <h1>Kafe Nusantara</h1>
-        <p>Silakan pilih menu favorit Anda</p>
-    </header>
-
-    <div class="container">
-        <!-- Tombol Kategori (Terhubung dengan JavaScript) -->
-        <div class="categories">
-            <button class="cat-btn active" data-category="semua">Semua</button>
-            <button class="cat-btn" data-category="makanan">Makanan</button>
-            <button class="cat-btn" data-category="minuman">Minuman</button>
-        </div>
-
-        <!-- Daftar Menu -->
+<!-- Daftar Menu -->
         <div class="menu-list">
             <div class="menu-item" data-category="makanan">
                 <div class="menu-info">
                     <h3>Nasi Goreng Spesial</h3>
                     <p>Nasi goreng dengan telur, ayam suwir, dan kerupuk.</p>
+                    <div class="menu-price">Rp 25.000</div>
                 </div>
-                <div class="menu-price">Rp 25.000</div>
-            </div>
-
-            <div class="menu-item" data-category="makanan">
-                <div class="menu-info">
-                    <h3>Roti Bakar Cokelat Keju</h3>
-                    <p>Roti panggang dengan selai cokelat dan keju parut melimpah.</p>
+                <div class="menu-actions">
+                    <button class="qty-btn" onclick="ubahJumlah('Nasi Goreng Spesial', 25000, -1)">-</button>
+                    <span id="qty-nasi-goreng">0</span>
+                    <button class="qty-btn" onclick="ubahJumlah('Nasi Goreng Spesial', 25000, 1)">+</button>
                 </div>
-                <div class="menu-price">Rp 15.000</div>
             </div>
 
             <div class="menu-item" data-category="minuman">
                 <div class="menu-info">
                     <h3>Es Teh Manis</h3>
                     <p>Teh melati segar dengan es batu pilihan.</p>
+                    <div class="menu-price">Rp 5.000</div>
                 </div>
-                <div class="menu-price">Rp 5.000</div>
-            </div>
-
-            <div class="menu-item" data-category="minuman">
-                <div class="menu-info">
-                    <h3>Kopi Susu Gula Aren</h3>
-                    <p>Espresso dengan susu segar dan manisnya gula aren asli.</p>
+                <div class="menu-actions">
+                    <button class="qty-btn" onclick="ubahJumlah('Es Teh Manis', 5000, -1)">-</button>
+                    <span id="qty-es-teh">0</span>
+                    <button class="qty-btn" onclick="ubahJumlah('Es Teh Manis', 5000, 1)">+</button>
                 </div>
-                <div class="menu-price">Rp 18.000</div>
             </div>
         </div>
-    </div>
 
-    <!-- Menghubungkan file JavaScript eksternal -->
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- Bagian Keranjang & Total Harga -->
+        <div class="order-section">
+            <h3>Ringkasan Pesanan Anda</h3>
+            <ul id="order-list">
+                <li>Belum ada menu yang dipilih.</li>
+            </ul>
+            <div id="total-harga" style="font-weight: bold; margin-top: 10px;">Total: Rp 0</div>
+            <button id="whatsapp-btn" class="wa-btn" disabled>Kirim Pesanan ke Kasir (WhatsApp)</button>
+        </div>
